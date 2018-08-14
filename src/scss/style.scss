@@ -1,0 +1,337 @@
+@import 'normalize';
+@import 'cssReset';
+@import 'charte';
+@import 'mixins';
+@import 'placeholder';
+@import 'grid';
+@import 'nav';
+@import 'input';
+@import 'modal-checkbox';
+@import 'buttons';
+
+html{
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    background: $white;
+    background: red !important;
+    
+}
+
+body{
+    font-size: .9em;
+    @media(min-width:$screen-sm){
+        font-size: 1em;
+    }
+    &.modal-open{
+        overflow: hidden;
+    }
+}
+
+#css-support-msg {
+    text-align: center;
+    color: green;
+    display: none;
+}
+
+#css-support-msg.supported {
+    display: block;
+}
+
+h1{
+    text-align: center;
+    color: $gray;
+}
+
+h2{
+    background: $gray-light-2;
+    padding: 20px;
+    text-align: center;
+    color: $white;
+    font-size: 1.9em;
+}
+
+h3{
+    margin: 1.1em 0 0.7em;
+    color: $gray;    
+    font-family: $font-marshmallow;
+    font-size: 1.2em;
+}
+
+p{
+    color: $gray;
+}
+
+section{
+//    padding: 3em 1em;
+}
+
+//HOME
+.home{
+    padding: 3.2em 1em 0;
+    .icon_wash{
+        text-align: center;
+        img{
+        	width:100%; 
+        }
+    }
+    .icon_title{
+        text-align: center;
+    }
+}
+
+////////////
+//SERVICES
+////////////
+.services{
+    .container{   
+        > p{
+            margin: 1.2em 0 0;
+            text-align: center;
+        }
+        ul{
+            li{
+                color: $gray;
+            }
+        }
+    }
+    .service_item{
+      margin: 0 0 .7em;
+      background: $white;
+      box-shadow: 0 3px 2px 1px $black-3;
+      border-radius: 4px;
+  } 
+  input[type=checkbox]{
+    display: none;
+    &:checked{
+        ~ .collapse-content{
+            transform: scale3d(1,1,1);
+            padding: 1em; 
+            p,
+            ul,
+            .division,
+            .btn_booking{
+                display: block;
+            }
+            
+        }
+        ~.collapse-btn{
+            .iconPlus{
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+            .minus{
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+.collapse-btn{
+    transition: all .4s ease-in-out;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .7em 1em;
+    overflow: hidden;
+    cursor: pointer;
+    p{
+        display: inline-block;
+        vertical-align: middle;
+        color: $blue;
+        font-size: 1.1em;
+        font-weight: $font-weight-bolder;
+    }
+    .iconPlus{
+        @include animate;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        width: 20px;
+        .plus{
+            display: block;
+            width: 4px;
+            height: 20px;
+            margin: 0 auto;
+            border-radius: 2px;
+            background: $blue;
+        }
+        .minus{
+            @include animate;
+            position: absolute;
+            display: inline-block;
+            width: 20px;
+            height: 4px;
+            top: 8px;
+            border-radius: 2px;
+            background: $blue;
+        }
+    }
+}
+.collapse-content {
+    transition: all .2s ease-in-out;
+    transform: scale3d(1,0,1);
+    transform-origin: 0 0;
+    p{
+     color: $gray;
+ }
+ ul{
+    text-align: right;   
+    margin: .7em 0 0;
+    li{
+        display: inline-block;
+        vertical-align: bottom;
+        min-width: 37px;
+        min-height: 1px;
+        margin: 0 .5em;
+        color: $blue;
+        span{
+            display: block;
+            padding: .7em 0 0;
+            font-size: 1.2em;
+        }
+    }
+}
+.division{
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    margin: 1.2em auto;
+    background: $yellow;
+}
+p,
+ul,
+.division,
+.btn_booking{
+    display: none;
+            }
+       }
+}
+
+////////////////
+//USEFUL STUFF
+////////////////
+.useful_info{
+    h3{
+        color: $gray-light-2;
+        font-size: 1.1em;
+    }
+    .ico{
+        display: inline-block;
+        vertical-align: top;
+    }
+    p{
+        font-size: .9em;
+        color: $gray;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .schedule{
+        span{
+            position:relative;
+            display: block;
+            padding: .5em 0 0 .7em;
+            &:before{
+                content: '';
+                position:absolute;
+                top: 13px;
+                left: 0;
+                width: 5px;
+                height: 1px;
+                background: $gray-light-2;
+            }
+        }
+    }
+    .adress{
+        li{
+            margin: .3em 0;
+        }
+    }
+    .useful_info-details{
+        max-width: 500px;
+        margin: 0 auto;
+        @media(min-width:$screen-md){   
+            max-width: 360px;
+        }
+    }
+    .googleMap{
+        margin: 1em auto;
+        .map{
+            width: 100%;
+            max-width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            background: $gray-light-2; 
+        }
+    }
+}
+
+///////////
+//CONTACT
+///////////
+.contact{
+    p{
+        color: $gray;
+        margin: 1em 0;
+        text-align: center;
+    }
+    form{
+        text-align: center;
+    }
+}
+
+//////////
+//FOOTER
+//////////
+footer{
+    padding: 1em;
+    background: $gray-light-2;
+    color: $white;
+    ul{
+        li{
+            margin: 0.3em 0;
+            text-align:center;
+            .btn_modal-open{
+                cursor: pointer;
+                &:hover{
+                    color: $gray;
+                }
+            }
+        }
+    }
+}
+
+.aside{
+    width: 300px;
+    height: inherit;
+    background: blue;
+    position:relative;
+    display: inline-block;
+    .aside-content{
+        position: fixed;
+        width : 300px;
+        height: 300px;
+        background: red;
+    }
+}
+
+.main{
+    background: yellow;
+    display: inline-block;
+    .main-content{
+        background: purple;
+        width:50%;        height: 200px; 
+    }
+}

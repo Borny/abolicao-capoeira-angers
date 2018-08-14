@@ -1,0 +1,177 @@
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zindex-header;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 0 3px 1px $black-6;
+    @extend %clearfix;
+    .header-left{
+        float: left;
+        .logo{
+            svg{   
+                width: 50px;
+                height:50px;
+                padding: 4px 5px 0;
+            }
+        }
+    }
+    .header-right{
+        float: right;
+        li{
+         min-width: 60px;
+         height: 40px;
+         @include inlineBlock(middle);
+     }
+     .phoneIcon{
+        position:relative;
+        padding: 4px;
+        text-align: center;
+        @media(min-width:$screen-sm){
+            &:before{
+                content: '';
+                display: block;
+                position:absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+    }
+    .phoneNumber{
+        display: none;
+        @media(min-width:$screen-sm){
+            font-size: $font-size-lg;
+            font-weight: $font-weight-bolder;
+            display: inline-block;
+            padding: 10px 0 0; 
+            color: $blue;
+        }
+    }
+}
+    .burgerContainer{ //Toggles the navigation bar
+        .navToggle{
+            position: relative;
+            z-index: $zindex-navToggle;
+            display: block;
+            height: 100%;
+            padding: 17px 0 0;
+            cursor: pointer;
+        }
+        span{
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            width: 35px;
+            height: 5px;
+            border-radius: 5px;
+            background: $blue;
+            transition: .25s ease-in-out;
+            transform-origin: left center;
+            &:before,
+            &:after{
+                content: '';
+                position: absolute;
+                display: block;
+                width: 35px;
+                height: 5px;
+                border-radius: 5px;
+                background: $blue;
+                transition: .25s ease-in-out;
+            }
+            &:before{
+                top: -10px;
+            }
+            &:after{
+                top: 10px;
+            }
+        }
+    }
+    input{
+        display: none;
+        &:checked{
+            ~.header-right{
+                .navToggle{
+                    span{
+                        background: transparent;
+                        &:before{
+                            top: 0;
+                            -webkit-transform: rotate(45deg);
+                            -moz-transform: rotate(45deg);
+                            -o-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+                        &:after{
+                            top:0;
+                            -webkit-transform: rotate(-45deg);
+                            -moz-transform: rotate(-45deg);
+                            -o-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+            ~.nav-container{
+                .navOverlay{
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0,0,0,0.6);
+                }
+                nav{
+                    right: 0;
+                }
+            }
+        }
+    }   
+    .nav-container{
+        .navOverlay{
+            position:absolute;
+            top: -5000px;
+            z-index: 100;
+            background: transparent;
+            transition: .5s ease-in-out;
+        }
+        //navigation hidden on the right
+        nav{
+            position: fixed;
+            z-index: $zindex-header;
+            right: -100%;
+            width: 80%;
+            max-width: 250px;
+            height: 100%;
+            padding: 40px 0 0;
+            background: $white;
+            transition: .5s ease-in-out;
+            li{
+                a{   
+                    display: block;
+                    width: 100%;
+                    height: 40px;
+                    padding: 12px 0 0 25px;
+                    background:$white;
+                    border-bottom: 1px solid $blue;
+                    color: $blue;
+                    transition: .5s ease-in-out;
+                    &:hover,
+                    &:active {
+                        cursor:pointer;
+                        background:$blue;
+                        color: $white;
+                        font-weight:$font-weight-bold;
+                    }
+                    &.selected{
+                        font-weight:$font-weight-bold;
+                        box-shadow:inset 10px 0 0 0 $blue;
+                    }
+                }
+            }
+        }
+    }
+}

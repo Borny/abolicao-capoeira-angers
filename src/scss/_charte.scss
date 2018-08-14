@@ -1,0 +1,68 @@
+//COLORS
+$white: #FFF;
+$black: #000;
+
+$gray: #444;
+$gray-light: #F0F0F0;
+$gray-light-2: #929292;
+
+
+$blue: #21ACE7;
+$yellow: #FFC26B;
+
+//OPACITY
+$black-6: rgba(0,0,0,.6);
+$black-3: rgba(0,0,0,.3);
+$black-2: rgba(0,0,0,.2);
+
+//FONT
+@import url(fonts.googleapis.com/css?family=Roboto:400,500,300);
+
+@font-face {
+    font-family: "soft marshmallow";
+    src: url(../fonts/soft_marshmallow/soft_marshmallow.otf) format("truetype");
+}
+
+$font-roboto: 'Roboto', Arial, sans-serif, serif, Helvetica;
+$font-marshmallow: 'soft marshmallow';
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,p,li,a,div,section,span,label,input,select{
+  font-family: $font-roboto;
+}
+
+//FONT SIZE
+$font-size-sm: 13px;
+$font-size-md: 15px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-xxxl: 30px;
+
+//FONT WEIGHT
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-bolder: 600;
+
+/////////////////////
+// Z-index
+/////////////////////
+$zindex-header:100;
+$zindex-nav:150;
+$zindex-navToggle:200;
+$zindex-modal: 1000;
+$zindex-modal-dialog: 1100;
+
+/////////////////////
+// Columns
+/////////////////////
+$columns: 12 !default;
+
+//TEXT SHADOW
+$shadow-75: 1px 2px 1px rgba(0,0,0,.75);
+
+//SCREEN SIZE
+$screen-xs:468px;
+$screen-sm:768px;
+$screen-md:992px;
+$screen-lg:1200px;

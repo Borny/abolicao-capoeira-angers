@@ -1,0 +1,27 @@
+.btn_booking{
+    max-width: 150px;
+    margin: 1.2em auto 0;
+    padding: .5em 1.5em;
+    background: $yellow;
+    border-radius: 4px;
+    box-shadow: 0 3px 2px 1px $black-3;
+    color: $white;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: $font-marshmallow;
+    transition: all .2s ease-in-out;
+    touch-action: manipulation;
+    outline: 0;
+    border:none;
+    cursor: pointer;
+    &:hover,
+    &:focus{
+        outline: none;
+        background: lighten($yellow, 5%);
+        box-shadow: 0 3px 2px 1px $black-2;
+    }
+    &:active{
+        background: darken($yellow, 5%);
+        box-shadow: 0 3px 2px 1px $black-6;
+    }
+}

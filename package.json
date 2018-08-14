@@ -1,0 +1,33 @@
+{
+  "name": "abolicao-capoeira-angers",
+  "version": "1.0.0",
+  "description": "Abolicao Capoeira Website in Angers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borny/abolicao-capoeira-angers.git"
+  },
+  "keywords": [
+    "capoeira",
+    "abolicao",
+    "angers",
+    "website",
+    "martial",
+    "arts"
+  ],
+  "author": "Tristan Deloris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borny/abolicao-capoeira-angers/issues"
+  },
+  "homepage": "https://github.com/Borny/abolicao-capoeira-angers#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-connect": "^5.5.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1"
+  }
+}

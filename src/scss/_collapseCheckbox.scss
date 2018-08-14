@@ -1,0 +1,50 @@
+//This file makes use of a checkbox as a collapse trigger,
+//which doesn't require JavaScript
+
+input[type=checkbox] {
+    display: none;
+    //checkbox in checked state
+    &:checked {
+        ~ .collapse-btn {
+            p {
+                &:after {
+                    -webkit-transform: rotate(540deg);
+                    -moz-transform: rotate(540deg);
+                    -ms-transform: rotate(540deg);
+                    -o-transform: rotate(540deg);
+                    transform: rotate(540deg);
+                }
+            }
+        }
+        ~ .collapse-content {
+            @include animate;
+            visibility: visible;
+            max-height: 100%;
+            opacity: 1;
+            .row{
+                height: 100%;
+                div{
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.collapse-content {
+    @include animate;
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    .modal-header{
+        color: $white;
+    }
+    .row{
+        @include animate;
+        height:0;
+        div{
+            @include animate;
+            height: 0;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.btn-modal_close {
+    display: inline-block;
+    float: right;
+    margin: 0 10px 0 0;
+    padding: 6px 9px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: $yellow;
+    text-align: center;
+    color: $white;
+    font-weight: bold;
+    &:hover,
+    &:focus {
+        background: lighten($yellow, 5);
+        cursor: pointer;
+    }
+    &:active {
+        background: darken($yellow, 5);
+    }
+}
+
+.modalCheckbox {
+    .modal-overlay {
+        //modal background
+        display: none;
+        background: rgba(0, 0, 0, .6);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: $zindex-modal;
+    }
+    .modal-dialog {
+        position: fixed;
+        top: -100%;
+        left: 50%;
+        width: 300px;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: $zindex-modal-dialog;
+        border-radius: 4px;
+        background: $white;
+        .modal-header {
+            padding: 15px 0;
+            background: $blue;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            text-align: center;
+            color: $white;
+            h2 {
+                margin: 0;
+            }
+        }
+        .modal-body {
+            padding: 20px;
+        }
+    }
+}
+
+.modal-input {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    &:checked {
+        bottom:inherit;
+        //Displays the modal
+        ~ .modal-overlay {
+            display: block;
+        }
+        ~ .modal-dialog {
+            -webkit-transition: .5s;
+            -moz-transition: .5s;
+            -ms-transition: .5s;
+            -o-transition: .5s;
+            transition: .5s;
+            top: 10px;
+        }
+    }
+}
